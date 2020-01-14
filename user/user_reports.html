@@ -1,0 +1,250 @@
+<style type="text/css">
+   html { overflow-y: hidden; }
+   .btnlogout{
+   background-color: #581845;
+   }
+   .loaderss {
+   border: 16px solid #f3f3f3;
+   border-radius: 50%;
+   border-top: 16px solid blue;
+   border-right: 16px solid green;
+   border-bottom: 16px solid red;
+   width: 60px;
+   height: 60px;
+   -webkit-animation: spin 2s linear infinite;
+   animation: spin 2s linear infinite;
+   }
+   @-webkit-keyframes spin {
+   0% { -webkit-transform: rotate(0deg); }
+   100% { -webkit-transform: rotate(360deg); }
+   }
+   @keyframes spin {
+   0% { transform: rotate(0deg); }
+   100% { transform: rotate(360deg); }
+   }
+   .marginlefts{
+    left: -50%;
+    top: 130%;
+    min-width: 89px;
+    }
+     * {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  min-height: 100vh;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+h2,
+h3,
+a {
+  color: #34495e;
+}
+a {
+  text-decoration: none;
+}
+.logo {
+  margin: 0;
+  font-size: 1.20em;
+}
+.main-nav {
+  margin-top: 3px;
+}
+.logo a,
+.main-nav a {
+  padding: 1px 12px;
+  text-transform: uppercase;
+  text-align: left;
+  display: block;
+}
+.main-nav a {
+  color: #34495e;
+  font-size: .80em;
+}
+.main-nav a:hover {
+  color: #718daa;
+}
+.header {
+  padding-top: .3em;
+  padding-bottom: .3em;
+  border: 1px solid #a2a2a2;
+  background-color: #F9E76A;
+  -webkit-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+  /*-webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;*/
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+@media (min-width: 768px) {
+  .header,
+  .main-nav {
+    display: flex;
+  }
+  
+  .header {
+    flex-direction: column;
+    align-items: center;
+    .header {
+      width: 80%;
+      margin: 0 auto;
+      max-width: 1150px;
+    }
+  }
+}
+@media (min-width: 1025px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+ #wrapper #contents-wrapper {
+  /* overflow-x: hidden; */
+  
+  width: 100%;
+  padding-top: 6px;
+  padding-bottom: 80px;
+  /* margin-top: 50px;*/
+  
+  margin-left: 89px;
+}
+</style>
+<div id="page-top">
+  <header class="header">
+        <h1 class="logo">
+            <a href="tracknovateAdmin" style="text-decoration: none">TRACKNOVATE CRM</a>
+        </h1>
+        <ul class="main-nav">
+            <li class="text-dark mr-3" style="font-size: 20px;">{{email}}</li>
+            <li>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-user-circle fa-2x"></i>
+          </a>
+                    <div class="dropdown-menu marginlefts">
+                        <a href="#" class="dropdown-item">
+              <i class="fa fa-user"></i> Profile
+            </a>
+                        <a href="#" class="dropdown-item" ng-click="Logout()">
+              <i class="fas fa-power-off" style="cursor: pointer; color: #581845;"></i> Logout
+            </a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </header>
+   <div id="wrapper" class="">
+      <!-- Sidebar -->
+      <div ng-show="showMe">
+         <ul class="sidebar navbar-nav">
+         <li class="nav-item active">
+            <a class="nav-link" href="userDashboard">
+            <i class="fas fa-fw fa-tachometer-alt"></i><br>
+            <span class="sidebaruser">Dashboard</span>
+            </a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="lead">
+            <i class="fas fa-user-plus"></i><br>
+            <span class="sidebaruser">Create Lead</span></a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="history">
+            <i class="fas fa-fw fa-file"></i><br>
+            <span class="sidebaruser">History</span></a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="getreports">
+            <i class="fas fa-fw fa-file"></i><br>
+            <span class="sidebaruser">Reports</span></a>
+         </li>
+        <!--  <li><img src="./img/giphy.gif" height="120px" width="90px"></li> -->
+      </ul>
+      </div>
+      <div id="contents-wrapper">
+         <div class="container-fluid">
+            <!-- Breadcrumbs-->
+            <!-- Add user Example -->
+            <div class="card mb-3" style="">
+               <div class="card-header">
+                  <div class="row">
+                     <div class="col-lg-6 col-sm-6"> <i class="fas fa-fw fa-file"></i>
+                        History Lead 
+                     </div>
+                     <div class="col-lg-5 col-md-5 col-12">
+                        <input type="text" ng-model="userlead" class="form-control border border-warning "name="" placeholder="Search Lead"> 
+                     </div>
+                     <div class="col-lg-1 col-md-1 col-12"> 
+                        <input class="btn btn-warning " type="submit"  ng-click="history_lead()" value="Search"> 
+                     </div>
+                  </div>
+               </div>
+               <div class="card-body">
+                  <div class="card-body">
+                     <center>
+                        <loaderss></loaderss>
+                     </center>
+                     <br/>
+                     <div class="row">
+                        <div class="col-md-12" ng-show="filter_data > 0">
+                           <table class="table table-striped table-bordered">
+                              <thead>
+                                 <th>Organisation&nbsp;<a ng-click="sort_with('subject');"><i class="fa fa-sort"></i></a></th>
+                                 <th>Type&nbsp;<a ng-click="sort_with('type');"><i class="fa fa-sort"></i></a></th>
+                                 <th>Status&nbsp;<a ng-click="sort_with('status');"><i class="fa fa-sort"></i></a></th>
+                                 <th>Stage&nbsp;<a ng-click="sort_with('stage');"><i class="fa fa-sort"></i></a></th>
+                                 <th>Description&nbsp;<a ng-click="sort_with('description');"><i class="fa fa-sort"></i></a></th>
+                                 <th>Created-date&nbsp;<a ng-click="sort_with('createdDate');"><i class="fa fa-sort"></i></a></th>
+                                 <th>ModifiedDate&nbsp;<a ng-click="sort_with('modifiedDate');"><i class="fa fa-sort"></i></a></th>
+                                 <th>NextDate&nbsp;<a ng-click="sort_with('nextActionDate');"><i class="fa fa-sort"></i></a></th>
+                              </thead>
+                              <tbody>
+                                 <tr ng-repeat="data in searched = (file | filter:search | orderBy : base :reverse) | beginning_data:(current_grid-1)*data_limit | limitTo:data_limit">
+                                    <!-- <td>{{data.owner}}</td> --> 
+                                    <td>{{data.subject}}</td>
+                                    <td>{{data.type}}</td>
+                                    <td class="text-center">
+                                       <div ng-if="data.status == 'open'"><img src="./img/open1.png" height="25px" width="55px;"></div>
+                                       <div ng-if="data.status == 'close'"><img src="./img/close1.png" height="25px" width="55px;"></div>
+                                    </td>
+                                    <td>{{data.stage}}</td>
+                                    <td>{{data.description}}</td>
+                                    <td>{{data.createdDate}}</td>
+                                    <td>{{data.modifiedDate}}</td>
+                                    <td>{{data.nextActionDate}}</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <div class="col-md-12" ng-show="filter_data == 0">
+                           <div class="col-md-12">
+                              <h4>No records found..</h4>
+                           </div>
+                        </div>
+                        <div class="col-md-12">
+                           <div class="col-md-6 pull-left">
+                              <h5>Showing {{ searched.length }} of {{ entire_user}} lead</h5>
+                           </div>
+                           <div class="col-md-6" ng-show="filter_data > 0">
+                              <div pagination="" page="current_grid" on-select-page="page_position(page)" boundary-links="true" total-items="filter_data" items-per-page="data_limit" class="pagination-small pull-right" previous-text="&laquo;" next-text="&raquo;"  max-size="9"></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+</div>

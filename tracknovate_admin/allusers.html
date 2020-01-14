@@ -1,0 +1,134 @@
+<style type="text/css">
+    html { overflow-y: hidden; }
+</style>
+<div id="page-top">
+    <header class="header">
+        <h1 class="logo"><a href="tracknovateAdmin" style="text-decoration: none">TRACKNOVATE CRM</a></h1>
+        <ul class="main-nav">
+            <li class="text-dark mr-3" style="font-size: 20px;">{{email}}</li>
+            <li>
+                <div class="dropdown" style="visibility: hidden;">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-user-circle fa-2x"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item"><i class="fa fa-user"></i> Profile</a>
+                        <a href="#" class="dropdown-item" ng-click="Logout()"><i class="fas fa-power-off" style="cursor: pointer; color: #581845;"></i> Logout</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </header>
+    <div id="wrapper" class="scroolallpage">
+        <!-- Sidebar -->
+        <div ng-show="showMe">
+            <ul class="sidebar navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="tracknovateAdmin">
+        <i class="fas fa-fw fa-tachometer-alt"></i><br>
+        <span class="sidebaruser">Dashboard</span>
+        </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tracknovateAdduser">
+        <i class="fas fa-user-plus"></i><br> 
+        <span class="sidebaruser">Add user</span>
+        </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tracknovateusers">
+        <i class="fas fa-users"></i><br>
+        <span class="sidebaruser">All users</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tracknovatereports">
+        <i class="fas fa-fw fa-file"></i><br>
+        <span class="sidebaruser">Reports</span></a>
+                </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="usersummary">
+                <i class="fas fa-user-clock"></i>
+                    <br>
+                      <span class="sidebaruser">User Summary</span>
+                    </a>
+                  </li>
+            </ul>
+        </div>
+        <div id="contents-wrapper">
+            <div class="container-fluid">
+                <!-- DataTables Example -->
+                <div class="card" style="">
+                    <div class="card-header" style="font-weight: 200; font-size: 20px;">
+                        <i class="fas fa-users"></i> Tracknovate Sales Users
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-2 col-sm-1">
+                                <select ng-model="data_limit" class="form-control">
+                                      <option>200</option>
+                                      <option>30</option>
+                                      <option>50</option>
+                                      <option>100</option>
+                              </select>
+                            </div>
+                            <div class="col-lg-6 col-sm-2 marginleft">
+                                <input type="text" ng-model="search" ng-change="filter()" placeholder="Search" class="form-control " />
+                            </div>
+                        </div>
+                        <center>
+                            <loader></loader>
+                        </center>
+                        <br/>
+                        <div class="row">
+                            <div class="col-md-12" ng-show="filter_data > 0">
+                                <div id="scrolltable">
+                                    <table class="table table-striped table-bordered table-hover sortable">
+                                        <thead style="font-size: 11px; background-color: #013188; color:  white; position: static;">
+                                            <tr>
+                                                <!--  <th>S.no</th> -->
+                                                <th>Username&nbsp;<a ng-click="sort_with('username');"><i class="fa fa-sort icon"></i></a></th>
+                                                <th>FirstName&nbsp;<a ng-click="sort_with('firstname');"><i class="fa fa-sort icon"></i></a></th>
+                                                <th>LastName&nbsp;<a ng-click="sort_with('lastname');"><i class="fa fa-sort icon"></i></a></th>
+                                                <th>Contact&nbsp;<a ng-click="sort_with('contact');"><i class="fa fa-sort icon"></i></a></th>
+                                                <th>Email&nbsp;<a ng-click="sort_with('email');"><i class="fa fa-sort icon"></i></a></th>
+                                                <th>Department&nbsp;<a ng-click="sort_with('department');"><i class="fa fa-sort icon"></i></a></th>
+                                                <th>CreatedBy&nbsp;<a ng-click="sort_with('createdBy');"><i class="fa fa-sort icon" ></i></a></th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody style="font-size: 12px;">
+                                            <tr ng-repeat="data in searched = (file | filter:search | orderBy : base :reverse) | beginning_data:(current_grid-1)*data_limit | limitTo:data_limit" ng-if="data.department=='tracknovate sales'">
+                                                <!-- <td>{{$index+1}}</td> -->
+                                                <td>{{data.username}}</td>
+                                                <td>{{data.firstname}}</td>
+                                                <td>{{data.lastname}}</td>
+                                                <td>{{data.contact}}</td>
+                                                <td><a ng-href="trackuser/{{data.email}}" data-toggle="tooltip" data-placement="top" title="userinfo?" style="text-decoration: none;">{{data.email}}</a></td>
+                                                <td>{{data.department}}</td>
+                                                <td>{{data.createdBy}}</td>
+                                                <td class="text-center"><a href="tracknovateEdituser/{{data.email}}"><i class="far fa-edit"></i></a></td>
+                                                <td class="text-center"><i class="fa fa-trash" ng-click="Deleteuser(data.email)"></i></td>Deleteuser
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-12" ng-show="filter_data == 0">
+                                <div class="col-md-12">
+                                    <h4>No records found..</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="col-md-6 pull-left">
+                                    <h5>Showing {{ searched.length }} of {{ entire_user}} entries</h5>
+                                </div>
+                                <div class="col-md-6" ng-show="filter_data > 0">
+                                    <div pagination="" page="current_grid" on-select-page="page_position(page)" boundary-links="true" total-items="filter_data" items-per-page="data_limit" class="pagination-small pull-right" previous-text="&laquo;" next-text="&raquo;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer small text-muted">Last Updated yesterday at 11:59 PM</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

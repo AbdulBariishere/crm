@@ -1,0 +1,184 @@
+<style type="text/css">
+  html { overflow-y: hidden; overflow-x: hidden; }
+  
+</style>
+</style> 
+<div id="page-top">
+  <header class="header">
+    <h1 class="logo"><a href="vosoAdmin" style="text-decoration: none">TRACKNOVATE CRM</a></h1> <!-- <i class="fas fa-bars" ng-click="myFunc()"></i>  -->
+          
+ 
+            
+      <ul class="main-nav">
+          <li class="text-dark mr-3" style="font-size: 20px;">{{email}}</li>
+           
+          <li> 
+              <div class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-user-circle fa-2x"></i></a>
+            <div class="dropdown-menu">
+              <a href="#" class="dropdown-item"><i class="fa fa-user"></i> Profile</a>
+              <a href="#" class="dropdown-item" ng-click="Logout()" ><i class="fas fa-power-off" style="cursor: pointer; color: #581845;"></i> Logout</a>
+      </div>
+    </div>
+          </li>
+          
+      </ul>
+  </header> 
+ 
+
+<div id="wrapper" class="scroolallpage">
+  <!-- Sidebar -->
+  <div ng-show="showMe">
+    <ul class="sidebar navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="vosoAdmin">
+        <i class="fas fa-fw fa-tachometer-alt"></i><br>
+        <span class="sidebaruser">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="vosoAdduser">
+        <i class="fas fa-user-plus"></i><br> 
+        <span class="sidebaruser">Add user</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="vosousers">
+        <i class="fas fa-users"></i><br>
+        <span class="sidebaruser">All users</span></a>
+      </li>
+    <!--   <li class="nav-item">
+        <a class="nav-link" href="reports">
+        <i class="fas fa-fw fa-file"></i><br>
+        <span class="sidebaruser">History</span></a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link" href="vosoreports">
+        <i class="fas fa-fw fa-file"></i><br>
+        <span class="sidebaruser">Reports</span></a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="vosoSupportDashboard">
+     <i class="fas fa-phone"></i><br>
+        <span class="sidebaruser">support</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="leadsummary">
+     <i class="fas fa-user-clock"></i><br>
+        <span class="sidebaruser">Lead Summary</span></a>
+      </li>
+      
+    </ul>
+  </div>
+  <div id="contents-wrapper">
+    <div class="container-fluid">
+      <!-- DataTables Example -->
+      <div class="card" style="">
+        <div class="card-header" style="font-weight: 800;   color: #013188">
+          <i class="fa fa-dashboard fa-2x mr-3"></i>Support Dashboard
+          <span ng-click="reloaddashboard()"><i  class="fa fa-refresh fa-2x"  style="float: right; margin-right: 10px; cursor: pointer;" ></i></span>
+        </div>
+        <div class="card-body">
+          <div class="cards1">
+            <div class="row" style=" margin-bottom:50px;">
+              <div class="flex-css3">
+                <div><a ng-href="#" ng-click="todayTask_support()"  class="btns" >{{today_task}}</a><br>&nbsp;&nbsp;<span style="color:#013188">Today Tasks</span></div>
+                <span style="color:#013188">
+                  <div><a href="#" ng-click="All_leads()" class="btns"  >{{TotalLead}}</a><br>&nbsp;&nbsp;&nbsp;<span style="color:#013188">All Leads</span></div>
+                </span>
+                <div><a href="#" ng-click="Today_Modified()" class="btns">{{TodaysModification}}</a><br><span style="color:#013188">Today Modified Leads</span></div>
+                <div><a href="#" ng-click="converted_clients()" class="btns">{{TotalConvertedClients}}</a><br>&nbsp;&nbsp;&nbsp;<span style="color:#013188">Converted Clients</span></div>
+                
+                <div><a href="#" ng-click="pending_leads()" class="btns">{{TotalPendingLeadsCount}}</a><br><span style="color:#013188">Pending Leads</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4 mb-2">
+            <div class="col-lg-6 col-sm-6">
+            <input type="text" ng-model="search" ng-change="filter()" placeholder="Search..." class="form-control " />
+            </div>
+            <div class="col-lg-2 col-sm-2 marginleft">
+                <select ng-model="data_limit" class="form-control">
+                <option>100</option>
+                <option>200</option>
+                <option>250</option>
+                <option>300</option>
+              </select>
+
+            </div>
+          </div>
+          <center>
+            <loader></loader>
+          </center>
+          
+          <div class="row">
+            <div class="col-md-12" ng-show="filter_data > 0">
+              <div id="scrolltable">
+                <table class="table table-striped table-bordered table-hover sortable">
+                  <thead style="font-size: 11px;">
+                    <tr>
+                      <th>S.no</th>
+                      <th>LeadOwner&nbsp;<a ng-click="sort_with('username');"><i class="fa fa-sort"></i></a></th>
+                      <th>LeadNumber&nbsp;<a ng-click="sort_with('firstname');"><i class="fa fa-sort"></i></a></th>
+                      <th>Organisation&nbsp;<a ng-click="sort_with('lastname');"><i class="fa fa-sort"></i></a></th>
+                      <th>ClientName&nbsp;<a ng-click="sort_with('contact');"><i class="fa fa-sort"></i></a></th>
+                    <!--   <th>Address&nbsp;<a ng-click="sort_with('email');"><i class="fa fa-sort"></i></a></th> -->
+                      <th>City&nbsp;<a ng-click="sort_with('city');"><i class="fa fa-sort"></i></a></th>
+                      <th>State&nbsp;<a ng-click="sort_with('state');"><i class="fa fa-sort"></i></a></th>
+                      <th>Mobile&nbsp;<a ng-click="sort_with('mobile');"><i class="fa fa-sort"></i></a></th>
+                      <th>Status&nbsp;<a ng-click="sort_with('createdBy');"><i class="fa fa-sort"></i></a></th>
+                      <th>DepartmentStatus&nbsp;<a ng-click="sort_with('departmentStatus');"><i class="fa fa-sort"></i></a></th>
+
+                      <th>Stage&nbsp;<a ng-click="sort_with('stage');"><i class="fa fa-sort"></i></a></th>
+                    <!--   <th>Created&nbsp;<a ng-click="sort_with('createdBy');"><i class="fa fa-sort"></i></a></th>
+                      <th>Modified&nbsp;<a ng-click="sort_with('createdBy');"><i class="fa fa-sort"></i></a></th> -->
+                      <th>NextAction&nbsp;<a ng-click="sort_with('nextActionDate');"><i class="fa fa-sort"></i></a></th>
+                      <th>Edit</th>
+                    </tr>
+                  </thead>
+                  <tbody style="font-size: 12px;">
+                    <tr ng-repeat="data in searched = (file | filter:search | orderBy : base :reverse) | beginning_data:(current_grid-1)*data_limit | limitTo:data_limit">
+                      <td>{{$index+1}}</td>
+                      <td><a ng-href="vosotrackuser/{{data.owner}}" data-toggle="tooltip" data-placement="top"  title="userinfo?" style="text-decoration: none;">{{data.owner}}</a></td>
+                      <td><a ng-href="vosotracklead/{{data.number}}" data-toggle="tooltip" data-placement="top"  title="userinfo?" style="text-decoration: none;">{{data.number}}</a></td>
+                      <td>{{data.subject}}</td>
+                      <td>{{data.name}}</td>
+                     <!--  <td> {{data.address}}</td> -->
+                      <td>{{data.city}}</td>
+                      <td>{{data.state}}</td>
+                      <td>{{data.mobile}}</td>
+                      <td class="text-center">
+                        <div ng-if="data.status == 'open'"><img src="./img/open1.png" height="20px" width="50px;"></div>
+                        <div ng-if="data.status == 'close'|| data.status=='closewithoutsuccess' ||  data.status=='closewithsuccess' "><img src="./img/close1.png" height="20px" width="50px;"></div>
+                      </td>
+                        <td>{{data.departmentStatus}}</td>
+                      <td>{{data.stage}}</td>
+                   <!--    <td>{{data.createdDate}}</td>
+                      <td>{{data.modifiedDate}}</td> -->
+                      <td>{{data.nextActionDate}}</td>
+                       <td class="text-center"><a href="editStatus/{{data.number}}"><i class="far fa-edit"></i></a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="col-md-12" ng-show="filter_data == 0">
+              <div class="col-md-12">
+                <h4>No records found..</h4>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="col-md-6 pull-left">
+                <h5>Showing {{ searched.length }} of {{ entire_user}} entries</h5>
+              </div>
+              <div class="col-md-6" ng-show="filter_data > 0">
+                <div pagination="" page="current_grid" on-select-page="page_position(page)" boundary-links="true" total-items="filter_data" items-per-page="data_limit" class="pagination-small pull-right" previous-text="&laquo;" next-text="&raquo;" max-size="9"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer small text-muted">Last Updated yesterday at 11:59 PM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

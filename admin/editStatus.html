@@ -1,0 +1,123 @@
+<div id="page-top">
+   <nav class="navbar navbar-expand navbar-dark bg-color navbar-fixed-top" style="padding: 0px; margin-bottom: 40px;">
+      <a class="navbar-brand mr-1 text-dark" href="#" style="font-size: 22px;">TRACKNOVATE CRM</a>
+      <button class="btn btn-link btn-sm text-dark order-1 order-sm-0"  ng-click="myFunc()">
+      <i class="fas fa-bars"></i>
+      </button>
+      <div class="text-white" style="margin-left: 22%; margin-right: 43%;"></div>
+      <ul class="navbar-nav ml-auto ml-md-0">
+       <!--   <li class="text-dark mr-3" style="font-size: 20px;">{{email}}</li> -->
+      </ul>
+   </nav>
+   <div id="wrapper" class="scroolallpage">
+      <!-- Sidebar -->
+      <div ng-show="showMe">
+           <ul class="sidebar navbar-nav" style="margin-top: 51px;">
+      <li class="nav-item active">
+        <a class="nav-link" href="adminDashboard">
+        <i class="fas fa-fw fa-tachometer-alt"></i><br>
+        <span class="sidebaruser">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="users">
+        <i class="fas fa-user-plus"></i><br> 
+        <span class="sidebaruser">Add user</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="AllUsers">
+        <i class="fas fa-users"></i><br>
+        <span class="sidebaruser">All users</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="reports">
+        <i class="fas fa-fw fa-file"></i><br>
+        <span class="sidebaruser">History</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="myreports">
+        <i class="fas fa-fw fa-file"></i><br>
+        <span class="sidebaruser">Reports</span></a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="supportDashboard">
+    <i class="fas fa-phone"></i><br>
+        <span class="sidebaruser">support</span></a>
+      </li>
+    
+       <li class="nav-item">
+         <a class="nav-link" href="Usersummary">
+      <i class="fas fa-fw fa-file"></i><br>
+         <span class="sidebaruser">UserSummary</span></a>
+       </li>
+    </ul>
+      </div>
+      <div id="content-wrapper">
+         <div class="container-fluid">
+            <div class="card mb-3" style="">
+               <div class="card-header">
+                  <i class="far fa-edit"></i>
+                  Update Lead
+               </div>
+               <div class="card-body">
+                  <div class="container-fluid">
+                     <form>
+                        <div class="row">
+                           <div class="col-lg-6 col-md-6 col-12">
+                               <div class="form-group">
+                                 <label for="language">Department Status:</label>
+                                 <select ng-model="lead_department_status" class="form-control border border-warning "  required>
+                                    <option value="" selected disabled hidden>Select Department Status</option>
+                                    <option value="Pending_Sales_Team">Pending from sales team</option>
+                                    <option value="pending_Support_Team">Pending from support team</option>
+                                    <option value="converted_client">Close Completed</option>
+                                 </select>
+                                 <span id="client_department_status" class="text-warning" style="float: right;"></span>
+                              </div>
+                              <div class="form-group">
+                                 <label for="location">Stages:</label>
+                                 <select ng-model="sizeof_stages" class="form-control border border-warning "   required>
+                                    <option value="" selected disabled hidden>Select Stage</option>
+                                    <option value="open">open</option>
+                                     <option value="introduction">Introduction</option>
+                                    <option value="eligibility">Eligibility</option>
+                                    <option value="approval">Approval</option>
+                                    <option value="negotiation">negotiation</option>
+                                    <option value="convert">convert</option>
+                                     <option value="amazonapproval">Amazon Approval</option>
+                                    <option value="training">Training & OnBoarding</option>
+                                    <option value="branding">Branding</option>
+                                    <option value="live">Live</option>
+                                    <option value="completed">complete Close</option>
+                                 </select>
+                                 <span id="client_stages" class="text-warning" style="float: right;"></span>
+                              </div>
+                           
+                           </div>
+                           <div class="col-lg-6 col-md-6 col-12">
+                              <div class="form-group">
+                                 <label for="nextaction">Next Action:</label>
+                                 <input type="date" ng-model="next_action"    class="form-control border border-warning "  
+                                    placeholder="Enter Next Action"   required><span id="next_action" class="text-warning" style="float: right;"></span>
+                              </div>
+                              <div class="form-group">
+                                 <label for="description">Description:</label>
+                                 <textarea ng-model="description"   maxlength="1000" class="form-control border border-warning " >Description</textarea>
+                              </div>
+                        
+                           </div>
+                           <div class="col-12 text-center">
+                              <input class="btn btn-warning btn-red btn-lg  center-block" type="submit" ng-click="update_lead()" value="Save Changes">
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+</div>
+</div>

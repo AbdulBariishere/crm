@@ -1,0 +1,1282 @@
+<style type="text/css">
+   html { overflow-y: hidden; overflow-x: hidden; }
+   div #scrolltable { margin-top: 0px; height: 600px; overflow-y: scroll; }
+   #wrapper #contents-wrapper {
+  /* overflow-x: hidden; */
+  
+  width: 100%;
+  padding-top: 6px;
+  padding-bottom: 80px;
+  /* margin-top: 50px;*/
+  
+  margin-left: 89px;
+}
+   * {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  min-height: 100vh;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+h2,
+h3,
+a {
+  color: #34495e;
+}
+a {
+  text-decoration: none;
+}
+.logo {
+  margin: 0;
+  font-size: 1.20em;
+}
+.main-nav {
+  margin-top: 3px;
+}
+.logo a,
+.main-nav a {
+  padding: 1px 12px;
+  text-transform: uppercase;
+  text-align: left;
+  display: block;
+}
+.main-nav a {
+  color: #34495e;
+  font-size: .80em;
+}
+.main-nav a:hover {
+  color: #718daa;
+}
+.header {
+  padding-top: .3em;
+  padding-bottom: .3em;
+  border: 1px solid #a2a2a2;
+  background-color: #F9E76A;
+  -webkit-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+  /*-webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;*/
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+@media (min-width: 768px) {
+  .header,
+  .main-nav {
+    display: flex;
+  }
+  
+  .header {
+    flex-direction: column;
+    align-items: center;
+    .header {
+      width: 80%;
+      margin: 0 auto;
+      max-width: 1150px;
+    }
+  }
+}
+@media (min-width: 1025px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+   .fas1{
+   color: #F73E4C;
+   }
+   .faa{
+   color: #13E913;
+   }
+   ::-webkit-input-placeholder { /* Edge */
+  color: #013188;
+}
+
+:-ms-input-placeholder { /* Internet Explorer */
+  color: #013188;
+}
+
+::placeholder {
+  color: #013188;
+}
+   .thead-color{
+   background-color: #EBDEF0;}
+   .imgborder{
+   border-radius: 1px solid ;
+   }
+   .marginleft{
+   margin-left: 33%;
+   }
+   .btnlogout{
+   background-color: #581845;
+   }
+   .far{
+   color: #013188;
+   }
+   .loadings {
+   border: 16px solid #f3f3f3;
+   border-radius: 50%;
+   border-top: 16px solid blue;
+   border-right: 16px solid green;
+   border-bottom: 16px solid red;
+   width: 60px;
+   height: 60px;
+   -webkit-animation: spin 2s linear infinite;
+   animation: spin 2s linear infinite;
+   }
+   @-webkit-keyframes spin {
+   0% { -webkit-transform: rotate(0deg); }
+   100% { -webkit-transform: rotate(360deg); }
+   }
+   @keyframes spin {
+   0% { transform: rotate(0deg); }
+   100% { transform: rotate(360deg); }
+   }
+   .blinking{
+   animation:blinkingText 1s infinite;
+   }
+   @keyframes blinkingText{
+   0%{   color: white; }
+   30%{  color: transparent; }
+   60%{  color: transparent; }
+   99%{  color:transparent;  }
+   100%{ color: white; }
+   }
+   .flex-css3{
+   height: 100px; width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   align-items: content-start;
+   }
+   .btns {
+   display: inline-block;
+   text-decoration: none;
+   font-size: 28px;
+   font-weight: 800;
+   cursor: pointer;
+   color: black;
+   width: 100px;
+   height: 100px;
+   line-height: 100px;
+   border-radius: 50%;
+   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+   text-align: center;
+   vertical-align: middle;
+   overflow: hidden;
+   background-image: -webkit-linear-gradient(45deg, #F7F7F7 0%, #F7F7F7 100%);    
+   background-image: linear-gradient(45deg, #F7F7F7 0%, #F7F7F7 100%);
+   transition: .4s;
+   }
+   .btns:hover{
+   -webkit-transform: rotate(10deg);
+   -ms-transform: rotate(10deg);
+   transform: rotate(10deg);
+   font-size: 30px; 
+   font-weight: 800;
+   }
+   @-webkit-keyframes wrench {
+  0% {
+    -webkit-transform: rotate(-12deg);
+    transform: rotate(-12deg);
+  }
+
+  8% {
+    -webkit-transform: rotate(12deg);
+    transform: rotate(12deg);
+  }
+
+  10% {
+    -webkit-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  18% {
+    -webkit-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  20% {
+    -webkit-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  28% {
+    -webkit-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  30% {
+    -webkit-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  38% {
+    -webkit-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  40% {
+    -webkit-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  48% {
+    -webkit-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  58% {
+    -webkit-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  60% {
+    -webkit-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  68% {
+    -webkit-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  75% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes wrench {
+  0% {
+    -webkit-transform: rotate(-12deg);
+    -ms-transform: rotate(-12deg);
+    transform: rotate(-12deg);
+  }
+
+  8% {
+    -webkit-transform: rotate(12deg);
+    -ms-transform: rotate(12deg);
+    transform: rotate(12deg);
+  }
+
+  10% {
+    -webkit-transform: rotate(24deg);
+    -ms-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  18% {
+    -webkit-transform: rotate(-24deg);
+    -ms-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  20% {
+    -webkit-transform: rotate(-24deg);
+    -ms-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  28% {
+    -webkit-transform: rotate(24deg);
+    -ms-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  30% {
+    -webkit-transform: rotate(24deg);
+    -ms-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  38% {
+    -webkit-transform: rotate(-24deg);
+    -ms-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  40% {
+    -webkit-transform: rotate(-24deg);
+    -ms-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  48% {
+    -webkit-transform: rotate(24deg);
+    -ms-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(24deg);
+    -ms-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  58% {
+    -webkit-transform: rotate(-24deg);
+    -ms-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  60% {
+    -webkit-transform: rotate(-24deg);
+    -ms-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  68% {
+    -webkit-transform: rotate(24deg);
+    -ms-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  75% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+.faa-wrench.animated,
+.faa-wrench.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-wrench {
+  -webkit-animation: wrench 2.5s ease infinite;
+  animation: wrench 2.5s ease infinite;
+  transform-origin-x: 90%;
+  transform-origin-y: 35%;
+  transform-origin-z: initial;
+}
+
+/* BELL */
+
+@-webkit-keyframes ring {
+  0% {
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+  }
+
+  2% {
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+
+  4% {
+    -webkit-transform: rotate(-18deg);
+    transform: rotate(-18deg);
+  }
+
+  6% {
+    -webkit-transform: rotate(18deg);
+    transform: rotate(18deg);
+  }
+
+  8% {
+    -webkit-transform: rotate(-22deg);
+    transform: rotate(-22deg);
+  }
+
+  10% {
+    -webkit-transform: rotate(22deg);
+    transform: rotate(22deg);
+  }
+
+  12% {
+    -webkit-transform: rotate(-18deg);
+    transform: rotate(-18deg);
+  }
+
+  14% {
+    -webkit-transform: rotate(18deg);
+    transform: rotate(18deg);
+  }
+
+  16% {
+    -webkit-transform: rotate(-12deg);
+    transform: rotate(-12deg);
+  }
+
+  18% {
+    -webkit-transform: rotate(12deg);
+    transform: rotate(12deg);
+  }
+
+  20% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes ring {
+  0% {
+    -webkit-transform: rotate(-15deg);
+    -ms-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+  }
+
+  2% {
+    -webkit-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+
+  4% {
+    -webkit-transform: rotate(-18deg);
+    -ms-transform: rotate(-18deg);
+    transform: rotate(-18deg);
+  }
+
+  6% {
+    -webkit-transform: rotate(18deg);
+    -ms-transform: rotate(18deg);
+    transform: rotate(18deg);
+  }
+
+  8% {
+    -webkit-transform: rotate(-22deg);
+    -ms-transform: rotate(-22deg);
+    transform: rotate(-22deg);
+  }
+
+  10% {
+    -webkit-transform: rotate(22deg);
+    -ms-transform: rotate(22deg);
+    transform: rotate(22deg);
+  }
+
+  12% {
+    -webkit-transform: rotate(-18deg);
+    -ms-transform: rotate(-18deg);
+    transform: rotate(-18deg);
+  }
+
+  14% {
+    -webkit-transform: rotate(18deg);
+    -ms-transform: rotate(18deg);
+    transform: rotate(18deg);
+  }
+
+  16% {
+    -webkit-transform: rotate(-12deg);
+    -ms-transform: rotate(-12deg);
+    transform: rotate(-12deg);
+  }
+
+  18% {
+    -webkit-transform: rotate(12deg);
+    -ms-transform: rotate(12deg);
+    transform: rotate(12deg);
+  }
+
+  20% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+.faa-ring.animated,
+.faa-ring.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-ring {
+  -webkit-animation: ring 2s ease infinite;
+  animation: ring 2s ease infinite;
+  transform-origin-x: 50%;
+  transform-origin-y: 0px;
+  transform-origin-z: initial;
+}
+
+/* VERTICAL */
+
+@-webkit-keyframes vertical {
+  0% {
+    -webkit-transform: translate(0,-3px);
+    transform: translate(0,-3px);
+  }
+
+  4% {
+    -webkit-transform: translate(0,3px);
+    transform: translate(0,3px);
+  }
+
+  8% {
+    -webkit-transform: translate(0,-3px);
+    transform: translate(0,-3px);
+  }
+
+  12% {
+    -webkit-transform: translate(0,3px);
+    transform: translate(0,3px);
+  }
+
+  16% {
+    -webkit-transform: translate(0,-3px);
+    transform: translate(0,-3px);
+  }
+
+  20% {
+    -webkit-transform: translate(0,3px);
+    transform: translate(0,3px);
+  }
+
+  22% {
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+}
+
+@keyframes vertical {
+  0% {
+    -webkit-transform: translate(0,-3px);
+    -ms-transform: translate(0,-3px);
+    transform: translate(0,-3px);
+  }
+
+  4% {
+    -webkit-transform: translate(0,3px);
+    -ms-transform: translate(0,3px);
+    transform: translate(0,3px);
+  }
+
+  8% {
+    -webkit-transform: translate(0,-3px);
+    -ms-transform: translate(0,-3px);
+    transform: translate(0,-3px);
+  }
+
+  12% {
+    -webkit-transform: translate(0,3px);
+    -ms-transform: translate(0,3px);
+    transform: translate(0,3px);
+  }
+
+  16% {
+    -webkit-transform: translate(0,-3px);
+    -ms-transform: translate(0,-3px);
+    transform: translate(0,-3px);
+  }
+
+  20% {
+    -webkit-transform: translate(0,3px);
+    -ms-transform: translate(0,3px);
+    transform: translate(0,3px);
+  }
+
+  22% {
+    -webkit-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+}
+
+.faa-vertical.animated,
+.faa-vertical.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-vertical {
+  -webkit-animation: vertical 2s ease infinite;
+  animation: vertical 2s ease infinite;
+}
+
+/* HORIZONTAL */
+
+@-webkit-keyframes horizontal {
+  0% {
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+
+  6% {
+    -webkit-transform: translate(5px,0);
+    transform: translate(5px,0);
+  }
+
+  12% {
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+
+  18% {
+    -webkit-transform: translate(5px,0);
+    transform: translate(5px,0);
+  }
+
+  24% {
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+
+  30% {
+    -webkit-transform: translate(5px,0);
+    transform: translate(5px,0);
+  }
+
+  36% {
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+}
+
+@keyframes horizontal {
+  0% {
+    -webkit-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+
+  6% {
+    -webkit-transform: translate(5px,0);
+    -ms-transform: translate(5px,0);
+    transform: translate(5px,0);
+  }
+
+  12% {
+    -webkit-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+
+  18% {
+    -webkit-transform: translate(5px,0);
+    -ms-transform: translate(5px,0);
+    transform: translate(5px,0);
+  }
+
+  24% {
+    -webkit-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+
+  30% {
+    -webkit-transform: translate(5px,0);
+    -ms-transform: translate(5px,0);
+    transform: translate(5px,0);
+  }
+
+  36% {
+    -webkit-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+}
+
+.faa-horizontal.animated,
+.faa-horizontal.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-horizontal {
+  -webkit-animation: horizontal 2s ease infinite;
+  animation: horizontal 2s ease infinite;
+}
+
+/* FLASHING */
+
+@-webkit-keyframes flash {
+  0%, 100%, 50% {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+@keyframes flash {
+  0%, 100%, 50% {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+.faa-flash.animated,
+.faa-flash.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-flash {
+  -webkit-animation: flash 2s ease infinite;
+  animation: flash 2s ease infinite;
+}
+
+/* BOUNCE */
+
+@-webkit-keyframes bounce {
+  0%, 10%, 20%, 50%, 80% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes bounce {
+  0%, 10%, 20%, 50%, 80% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+
+  60% {
+    -webkit-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+
+.faa-bounce.animated,
+.faa-bounce.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-bounce {
+  -webkit-animation: bounce 2s ease infinite;
+  animation: bounce 2s ease infinite;
+}
+
+/* SPIN */
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(359deg);
+    -ms-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+.faa-spin.animated,
+.faa-spin.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-spin {
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
+
+/* FLOAT */
+
+@-webkit-keyframes float {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  50% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  50% {
+    -webkit-transform: translateY(-6px);
+    -ms-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.faa-float.animated,
+.faa-float.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-float {
+  -webkit-animation: float 2s linear infinite;
+  animation: float 2s linear infinite;
+}
+
+/* PULSE */
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+  100% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  50% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+  100% {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+.faa-pulse.animated,
+.faa-pulse.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-pulse {
+  -webkit-animation: pulse 2s linear infinite;
+  animation: pulse 2s linear infinite;
+}
+
+/* SHAKE */
+
+.faa-shake.animated,
+.faa-shake.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-shake {
+  -webkit-animation: wrench 2.5s ease infinite;
+  animation: wrench 2.5s ease infinite;
+}
+
+/* TADA */
+
+@-webkit-keyframes tada {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  10%, 20% {
+    -webkit-transform: scale(.9) rotate(-8deg);
+    transform: scale(.9) rotate(-8deg);
+  }
+
+  30%, 50%, 70% {
+    -webkit-transform: scale(1.3) rotate(8deg);
+    transform: scale(1.3) rotate(8deg);
+  }
+
+  40%, 60% {
+    -webkit-transform: scale(1.3) rotate(-8deg);
+    transform: scale(1.3) rotate(-8deg);
+  }
+
+  80% {
+    -webkit-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes tada {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  10%, 20% {
+    -webkit-transform: scale(.9) rotate(-8deg);
+    -ms-transform: scale(.9) rotate(-8deg);
+    transform: scale(.9) rotate(-8deg);
+  }
+
+  30%, 50%, 70% {
+    -webkit-transform: scale(1.3) rotate(8deg);
+    -ms-transform: scale(1.3) rotate(8deg);
+    transform: scale(1.3) rotate(8deg);
+  }
+
+  40%, 60% {
+    -webkit-transform: scale(1.3) rotate(-8deg);
+    -ms-transform: scale(1.3) rotate(-8deg);
+    transform: scale(1.3) rotate(-8deg);
+  }
+
+  80% {
+    -webkit-transform: scale(1) rotate(0);
+    -ms-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+  }
+}
+
+.faa-tada.animated,
+.faa-tada.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-tada {
+  -webkit-animation: tada 2s linear infinite;
+  animation: tada 2s linear infinite;
+}
+
+/* PASSING */
+
+@-webkit-keyframes passing {
+  0% {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+
+  50% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
+    opacity: 0;
+  }
+}
+
+@keyframes passing {
+  0% {
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+
+  50% {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
+    opacity: 0;
+  }
+}
+
+.faa-passing.animated,
+.faa-passing.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-passing {
+  -webkit-animation: passing 3s linear infinite;
+  animation: passing 3s linear infinite;
+}
+
+/* WAVE */
+
+@-webkit-keyframes burst {
+  0% {
+    opacity: .6;
+  }
+
+  50% {
+    -webkit-transform: scale(1.8);
+    transform: scale(1.8);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes burst {
+  0% {
+    opacity: .6;
+  }
+
+  50% {
+    -webkit-transform: scale(1.8);
+    -ms-transform: scale(1.8);
+    transform: scale(1.8);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.faa-burst.animated,
+.faa-burst.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-burst {
+  -webkit-animation: burst 3s infinite linear;
+  animation: burst 3s infinite linear;
+}
+ .badge {
+	position: absolute;
+    top: 7px;
+    right: 55px;
+    padding: 1px 5px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+.navigation {
+  display: flex;
+  flex-flow: row wrap;
+  /* This aligns items to the end line on main-axis */
+  justify-content: flex-end;
+}
+
+/* Medium screens */
+@media all and (max-width: 800px) {
+  .navigation {
+    /* When on medium sized screens, we center it by evenly distributing empty space around items */
+    justify-content: space-around;
+  }
+}
+
+/* Small screens */
+@media all and (max-width: 500px) {
+  .navigation {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
+ .marginlefts{
+    left: -50%;
+    top: 130%;
+    min-width: 89px;
+    }
+</style>
+</style> 
+<div id="page-top">
+   <header class="header">
+        <h1 class="logo">
+            <a href="tracknovateAdmin" style="text-decoration: none">TRACKNOVATE CRM</a>
+        </h1>
+        <ul class="main-nav">
+            <li class="text-dark mr-3" style="font-size: 20px;">{{email}}</li>
+            <li>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-user-circle fa-2x"></i>
+          </a>
+                    <div class="dropdown-menu marginlefts">
+                        <a href="#" class="dropdown-item">
+              <i class="fa fa-user"></i> Profile
+            </a>
+                        <a href="#" class="dropdown-item" ng-click="Logout()">
+              <i class="fas fa-power-off" style="cursor: pointer; color: #581845;"></i> Logout
+            </a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </header>
+<!-- <nav class="navbar navbar-expand navbar-dark bg-color navbar-fixed-top" style="padding: 0px; margin-bottom: 40px;">
+   <a class="navbar-brand mr-1 text-dark" href="#" style="font-size: 22px;">TRACKNOVATE CRM</a>
+   <button class="btn btn-link btn-sm text-dark order-1 order-sm-0"  ng-click="myFunc()">
+   <i class="fas fa-bars"></i>
+   </button>
+   <div id="user-margin"></div>
+  
+   <ul class="navbar-nav ml-auto ml-md-0">
+      <li class="text-dark mr-3" style="font-size: 17px;">{{email}}</li>
+      <div class="dropdown">
+         <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-user-circle fa-2x"></i></a>
+         <div class="dropdown-menu">
+            <a href="#" class="dropdown-item"><i class="fa fa-user"></i> Profile</a>
+            <a href="#" class="dropdown-item" ng-click="Logout()" ><i class="fas fa-power-off" style="cursor: pointer; color: #581845;"></i> Logout</a>
+         </div>
+      </div>  
+      <i class='fa fa-bell faa-ring animated fa-2x'></i>  
+       <span class="badge">{{TotalPendingLeadsCount}}</span>
+      <i class='fa fa-envelope faa-horizontal animated fa-2x' style="cursor: pointer;"></i>
+
+   </ul>
+</nav> -->
+<div id="wrapper" class="scroolallpage">
+   <!-- Sidebar -->
+   <div ng-show="showMe">
+      <ul class="sidebar navbar-nav">
+         <li class="nav-item active">
+            <a class="nav-link" href="userDashboard">
+            <i class="fas fa-fw fa-tachometer-alt"></i><br>
+            <span class="sidebaruser">Dashboard</span>
+            </a>
+         </li>
+         <li class="nav-item active">
+            <a class="nav-link" href="lead">
+            <i class="fas fa-user-plus"></i><br>
+            <span class="sidebaruser">Create Lead</span></a>
+         </li>
+         <li class="nav-item active">
+            <a class="nav-link" href="history">
+            <i class="fas fa-fw fa-file"></i><br>
+            <span class="sidebaruser">History</span></a>
+         </li>
+         <li class="nav-item active">
+            <a class="nav-link" href="getreports">
+            <i class="fas fa-fw fa-file"></i><br>
+            <span class="sidebaruser">Reports</span></a>
+         </li>
+        <!--  <li><img src="./img/giphy.gif" height="120px" width="90px"></li> -->
+      </ul>
+   </div>
+   <div id="contents-wrapper">
+      <div class="container-fluid">
+         <!-- DataTables Example -->
+         <div class="card" style="">
+            <div class="card-header" style=" font-weight: 800; color: #013188">
+               <i class="fa fa-dashboard fa-2x"></i>
+        Dashboard <input type="text" ng-model="search" ng-change="filter()" placeholder="Search" style="float: right; border:1px solid #F9E76A; border-radius: 2px; " />
+            <!--    <select ng-model="data_limit" style="float: right; margin-right: 5px; padding: 4px;">
+                         
+                        <option>100</option> 
+                        <option>150</option>
+                        <option>200</option>
+                        <option>500</option>
+                     </select> -->
+                     <span ng-click="reloaddashboard()"><i  class="fa fa-refresh fa-2x"  style="float: right; margin-right: 10px; cursor: pointer;" ></i></span>
+            </div>
+            <div class="card-body">
+               <div class="cards1">
+                  <div class="row" style=" margin-bottom:50px;">
+                     <div class="flex-css3">
+                        <div><a ng-href="#" ng-click="All_leads_user()"  class="btns" >{{TotalLead}}</a><br><br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#013188">All Leads</span></div>
+                        <span style="color:#013188">
+                           <div><a href="#" ng-click="Today_task_user()" class="btns"  >{{today_task}}</a><br><br>&nbsp;&nbsp;&nbsp;<span style="color:#013188">Today Task</span></div>
+                        </span>
+                        <div><a href="#" ng-click="Today_Modified_user()" class="btns">{{TodaysModification}}</a><br><br><span style="color:#013188">Modified Leads</span></div>
+                        <div><a href="#" ng-click="open_leads_user()" class="btns">{{TotalOpenStatusLeads}}</a><br><br>&nbsp;&nbsp;<span style="color:#013188">Open Leads</span></div>
+                        <div><a href="#" ng-click="closewithsuccess_user()" class="btns">{{TotalClosewithSuccessCount}}</a><br><br><span style="color:#013188">Close With Success</span></div>
+                        <div><a href="#" ng-click="closewithoutsuccess_user()" class="btns">{{TotalClosewitoutSuccessCount}}</a><br><br><span style="color:#013188">Close Without Success</span></div>
+                        <div><a href="#" ng-click="pending_leads()" class="btns">{{TotalPendingLeadsCount}}</a><br><br><span style="color:#013188">Pending Leads</span></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-lg-2 col-sm-1">
+                     
+                  </div>
+                  <div class="col-lg-6 col-sm-2 marginleft">
+                     
+                  </div>
+               </div>
+               <center>
+                  <loadings></loadings>
+               </center>
+               
+               <div class="row">
+                  <div class="col-md-12" ng-show="filter_data > 0">
+                     <div id="scrolltable">
+                        <table class="table table-striped table-bordered table-hover sortable" style="padding: 0px; margin: 0px;">
+                           <thead class="" style="font-size: 11px;">
+                              <th>Number&nbsp;<a ng-click="sort_with('number');"><i class="fa fa-sort"></i></a></th>
+                              <th>Name&nbsp;<a ng-click="sort_with('name');"><i class="fa fa-sort"></i></a></th>
+                              <th>ContactNumber&nbsp;<a ng-click="sort_with('mobile');"><i class="fa fa-sort"></i></a></th>
+                              <th>Organisation&nbsp;<a ng-click="sort_with('subject');"><i class="fa fa-sort"></i></a></th>
+                              <th>Type&nbsp;<a ng-click="sort_with('type');"><i class="fa fa-sort"></i></a></th>
+                              <th>Status&nbsp;<a ng-click="sort_with('status');"><i class="fa fa-sort"></i></a></th>
+                              
+                              <th>Stage&nbsp;<a ng-click="sort_with('stage');"><i class="fa fa-sort"></i></a></th>
+                              <th>Address&nbsp;<a ng-click="sort_with('address');"><i class="fa fa-sort"></i></a></th>
+                              <th>City&nbsp;<a ng-click="sort_with('address');"><i class="fa fa-sort"></i></a></th>
+                              <th>Pincode&nbsp;<a ng-click="sort_with('pincode');"><i class="fa fa-sort"></i></a></th>
+                              <th>State&nbsp;<a ng-click="sort_with('address');"><i class="fa fa-sort"></i></a></th>
+                              <th>Description&nbsp;<a ng-click="sort_with('description');"><i class="fa fa-sort"></i></a></th>
+                              <th>Source&nbsp;<a ng-click="sort_with('source');"><i class="fa fa-sort"></i></a></th>
+                              <th>Nextdate&nbsp;<a ng-click="sort_with('nextActionDate');"><i class="fa fa-sort"></i></a></th>
+                              <th>ModifiedDate&nbsp;<a ng-click="sort_with('modifiedDate');"><i class="fa fa-sort"></i></a></th>
+                              <th>Edit</th>
+                           </thead>
+                           <tbody style="font-size: 11px;">
+                              <tr ng-repeat="data in searched = (file | filter:search | orderBy : base :reverse) | beginning_data:(current_grid-1)*data_limit | limitTo:data_limit">
+                                 <td><a ng-href="history/{{data.number}}"  style="text-decoration: none;">{{data.number}}</a></td>
+                                 <td>{{data.name}}</td>
+                                 <td>{{data.mobile}}</td>
+                                 <td>{{data.subject}}</td>
+                                 <td>{{data.type}}</td>
+                                 <td class="text-center">
+                                    <div ng-if="data.status == 'open'"><img src="./img/open1.png" height="20px" width="50px;"></div>
+                                    <div ng-if="data.status == 'close'|| data.status=='closewithoutsuccess' ||  data.status=='closewithsuccess' "><img src="./img/close1.png" height="20px" width="50px;"></div>
+                                 </td>
+                                  
+                                 <td>{{data.stage}}</td>
+                                 <td>{{data.address}}</td>
+                                 <td>{{data.city}}</td>
+                                 <td>{{data.pincode}}</td>
+                                 <td>{{data.state}}</td>
+                                 <td>{{data.description}}</td>
+                                 <td>{{data.source}}</td>
+                                 <td>{{data.nextActionDate}}</td>
+                                 <td>{{data.modifiedDate  | date: 'yyyy-MM-dd'}}</td>
+                                 <td><a href="edittask/{{data.number}}"><i class="far fa-edit"></i></a></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+                  <div class="col-md-12" ng-show="filter_data == 0">
+                     <div class="col-md-12">
+                        <h4>No records found..</h4>
+                     </div>
+                  </div>
+                  <div class="col-md-12">
+                     <div class="col-md-6 pull-left">
+                        <h5>Showing {{ searched.length }} of {{ entire_user}} entries</h5>
+                     </div>
+                     <div class="col-md-6" ng-show="filter_data > 0">
+                        <div pagination="" page="current_grid" on-select-page="page_position(page)" boundary-links="true" total-items="filter_data" items-per-page="data_limit" class="pagination-small pull-right" previous-text="&laquo;" next-text="&raquo;"  max-size="9"></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="card-footer small text-muted">Last Updated yesterday at 11:59 PM</div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

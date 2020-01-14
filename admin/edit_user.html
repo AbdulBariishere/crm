@@ -1,0 +1,118 @@
+<style type="text/css">
+  html { overflow-y: hidden; }
+  .btnlogout{
+  background-color: #581845;
+  }
+  .bordercolor{
+  border:1px solid #F9E76A;}
+  .btn-save{
+  background-color: #F9E76A;
+  }
+</style>
+<div id="page-top">
+  <nav class="navbar navbar-expand navbar-dark bg-color navbar-fixed-top" style="padding: 0px; margin-bottom: 40px;">
+    <a class="navbar-brand mr-1 text-dark" href="#" style="font-size: 22px;">TRACKNOVATE CRM</a>
+    <button class="btn btn-link btn-sm text-dark order-1 order-sm-0" id="sidebarToggle" href="#">
+    <i class="fas fa-bars"></i>
+    </button>
+    <!-- Navbar -->
+    <ul class="navbar-nav ml-auto ml-md-0">
+      <li class="text-dark mr-3" style="font-size: 20px;">{{email}}</li>
+    </ul>
+  </nav>
+  <div id="wrapper" class="scrollallpage">
+    <!-- Sidebar -->
+    <ul class="sidebar navbar-nav" style="margin-top: 51px;">
+      <li class="nav-item active">
+        <a class="nav-link" href="adminDashboard">
+        <i class="fas fa-fw fa-tachometer-alt"></i><br>
+        <span class="marginleftadmin">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="users">
+        <i class="fas fa-user-plus"></i><br>
+        <span class="marginleftadmin">Add user</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="AllUsers">
+        <i class="fas fa-users"></i><br>
+        <span class="sidebaruser">All users</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="reports">
+        <i class="fas fa-fw fa-file"></i><br>
+        <span class="marginleftadmin">History</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="myreports">
+        <i class="fas fa-fw fa-file"></i><br>
+        <span class="sidebaruser">Reports</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="supportDashboard">
+     <i class="fas fa-phone"></i><br>
+        <span class="sidebaruser">support</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="Usersummary">
+     <i class="fas fa-fw fa-file"></i><br>
+        <span class="sidebaruser">UserSummary</span></a>
+      </li>
+    </ul>
+    <div id="content-wrapper">
+      <div class="container-fluid">
+        <div class="card mb-3" style="">
+          <div class="card-header">
+            <i class="fas fa-edit"></i>
+            Edit User
+          </div>
+          <div class="card-body">
+            <div class="container-fluid">
+              <form>
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-12">
+                    <div class="form-group">
+                      <label for="firstName">First Name:</label>
+                      <input type="text" ng-model="firstname" name="firstname"  class="form-control bordercolor" placeholder="Enter First Name" required>
+                    </div>
+                    <div class="field_info_outer form-group ">
+                      <label for="location">Contact:</label>
+                      <input type="text" ng-model="contact" name="contact" id="contact" class="form-control bordercolor"     
+                        placeholder="Enter Contact" value="" required> 
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-12">
+                    <div class="form-group">
+                      <label for="dob">Last Name:</label>
+                      <input type="text" ng-model="lastname" name="last_name" class="form-control bordercolor"  placeholder="Enter Last Name" required>                     
+                    </div>
+                    <div class="field_info_outer form-group">
+                      <label for="location">Department</label>
+                     <select ng-model="department" class="form-control bordercolor " id="department" required>
+                        <option value="" selected disabled hidden>Select Department</option>
+                        <option value="Tracknovate Admin">Tracknovate-admin</option>
+                        <option value="Voso Admin">Voso-admin</option>
+                        <option value="tracknovate sales">Tracknovate-Sales</option>
+                        <option value="voso sales">Voso-Sales</option>
+                        <option value="finance">Finance</option>
+                        <option value="Support">Support</option>
+                      </select>
+                      <span id="user_department" class="text-danger" style="float: right;"></span>
+                      <div id="drop_location" class="field_info_wrap"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 text-center">
+                  <button class="btn btn-save btn-red btn-lg rounded-0 center-block text-white" type="submit"  ng-click="edit_user()">Save Changes</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
